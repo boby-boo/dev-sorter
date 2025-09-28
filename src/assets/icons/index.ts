@@ -1,5 +1,5 @@
-import SettingsIcon from "./settings.svg?react";
-import SoundIcon from "./soundOn.svg?react";
-import SoundOffIcon from "./soundOff.svg?react";
+import SettingsIcon from "./settings.svg";
+import SoundIcon from "./soundOn.svg";
+import SoundOffIcon from "./soundOff.svg";
 
 export { SettingsIcon, SoundIcon, SoundOffIcon };
