@@ -1,9 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    SettingsIcon,
-    SoundIcon,
-    SoundOffIcon,
-} from '../../assets/icons/icons';
+import { SettingsIcon, SoundIcon, SoundOffIcon } from '../../assets/icons';
 import { setIsSettingsOpen } from '../../features/game/gameConfigSlice';
 import { setIsSoundOn } from '../../features/player/playerSlice';
 import { selectIsSoundOn } from '../../features/selectors';
@@ -24,16 +20,12 @@ const Menu = () => {
                         className="menu__button"
                         onClick={() => dispatch(setIsSettingsOpen(true))}
                     >
-                        {<SettingsIcon className="icon" />}
+                        {<SettingsIcon />}
                     </button>
                 </li>
                 <li className="menu__item">
                     <button className="menu__button" onClick={handleSound}>
-                        {isSoundOn ? (
-                            <SoundIcon className="icon" />
-                        ) : (
-                            <SoundOffIcon className="icon" />
-                        )}
+                        {isSoundOn ? <SoundIcon /> : <SoundOffIcon />}
                     </button>
                 </li>
             </ul>
