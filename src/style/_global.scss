@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: $font-family;
+    background-color: $dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app {
+    position: relative;
+}
+
+.icon {
+    fill: #757575;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+    &:hover {
+        fill: $primary;
+    }
+
+}

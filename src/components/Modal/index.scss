@@ -1,0 +1,41 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        color: $white;
+        text-transform: uppercase;
+        z-index: 10;
+        background-color: #FFFFFF14;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+    }
+    &__title {
+        font-size: 25px;
+        font-weight: 600;
+        span {
+            color: $primary;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__item {
+        font-size: 20px;
+        span {
+            font-weight: 600;
+        }
+    }
+}

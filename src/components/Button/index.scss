@@ -1,0 +1,18 @@
+.button {
+    background-color: $primary;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: $dark;
+        color: $primary;
+    }
+    &:disabled {
+        background-color: transparentize($dark, 0.7);
+        cursor: not-allowed;
+    }
+}

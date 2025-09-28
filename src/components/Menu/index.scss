@@ -1,0 +1,20 @@
+.menu {
+    position: absolute;
+    padding-top: 10px;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 60px;
+    z-index: 10;
+    border-radius: 10px;
+    &__list {
+        display: flex;
+        gap: 10px;
+        color: $white;
+        &__item {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}
