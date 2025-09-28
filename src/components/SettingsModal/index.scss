@@ -34,6 +34,7 @@
   }
 
   &__list {
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -45,6 +46,11 @@
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
+  }
+
+  &-btns__list {
+    display: flex;
+    gap: 10px;
   }
 
   &__button {

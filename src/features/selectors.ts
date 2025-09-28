@@ -4,6 +4,7 @@ export const selectIsGameOver = (state: RootState) => state.gameConfig.isGameOve
 export const selectIsSoundOn = (state: RootState) => state.player.isSoundOn;
 export const selectIsSettingsOpen = (state: RootState) => state.gameConfig.isSettingsOpen;
 export const selectBalls = (state: RootState) => state.gameConfig.balls;
+export const selectBallsQty = (state: RootState) => state.gameConfig.ballsQty;
 export const selectCurrentGameCounter = (state: RootState) => state.timerConfig.currentGameCounter;
 export const selectCurrentGameTime = (state: RootState) => state.timerConfig.currentGameTime;
 export const selectAllGameTime = (state: RootState) => state.timerConfig.allGameTime;
