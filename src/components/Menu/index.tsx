@@ -1,9 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    SettingsIcon,
-    SoundIcon,
-    SoundOffIcon,
-} from '../../assets/icons/icons';
+import { SettingsIcon, SoundIcon, SoundOffIcon } from '../../assets/icons';
 import { setIsSettingsOpen } from '../../features/game/gameConfigSlice';
 import { setIsSoundOn } from '../../features/player/playerSlice';
 import { selectIsSoundOn } from '../../features/selectors';
