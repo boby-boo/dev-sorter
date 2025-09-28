@@ -4,11 +4,13 @@ type GameState = {
     isGameOver: boolean;
     isSettingsOpen: boolean;
     balls: string[];
+    ballsQty: number;
 }
 
 const initialState: GameState = {
     isGameOver: false,
-    isSettingsOpen: false,
+    ballsQty: JSON.parse(localStorage.getItem('ballsQty') || '4'),
+    isSettingsOpen: true,
     balls: JSON.parse(localStorage.getItem('balls') || '["js", "ts", "react"]'),
 }
 
@@ -22,6 +24,10 @@ export const gameConfigSlice = createSlice({
         resetGame: (state) => {
             state.isGameOver = false;
         },
+        setBallsQty: (state, action) => {
+            state.ballsQty = action.payload;
+            localStorage.setItem('ballsQty', JSON.stringify(state.ballsQty));
+        },
         setIsSettingsOpen: (state, action) => {
             state.isSettingsOpen = action.payload;
         },
@@ -32,5 +38,5 @@ export const gameConfigSlice = createSlice({
     },
 })
 
-export const { setIsGameOver, resetGame, setIsSettingsOpen, setBalls } = gameConfigSlice.actions;
+export const { setIsGameOver, resetGame, setIsSettingsOpen, setBalls, setBallsQty } = gameConfigSlice.actions;
 export default gameConfigSlice.reducer;

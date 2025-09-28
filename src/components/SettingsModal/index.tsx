@@ -6,15 +6,19 @@ import {
     resetGame,
     setBalls,
     setIsSettingsOpen,
+    setBallsQty,
 } from '../../features/game/gameConfigSlice';
-import { selectBalls } from '../../features/selectors';
+import { selectBalls, selectBallsQty } from '../../features/selectors';
 import { resetCounter } from '../../features/timer/timerConfigSlice';
 import { ballsItems } from '../../constants/gameConfig';
+
+const ballsQtyList = [4, 6, 8, 10];
 
 const SettingsModal = () => {
     const balls = useSelector(selectBalls);
     const dispatch = useDispatch();
     const [activeButtonsId, setActiveButtonsId] = useState<string[]>(balls);
+    const [qtyBalls, setQtyBalls] = useState(useSelector(selectBallsQty));
 
     const handleClick = (id: string) => {
         if (activeButtonsId.includes(id)) {
@@ -24,10 +28,15 @@ const SettingsModal = () => {
         }
     };
 
+    const handleButtonClick = (value: number) => {
+        setQtyBalls(value);
+    };
+
     const handleApply = () => {
         dispatch(resetGame());
         dispatch(resetCounter());
         dispatch(setBalls(activeButtonsId));
+        dispatch(setBallsQty(qtyBalls));
         dispatch(setIsSettingsOpen(false));
     };
 
@@ -60,6 +69,30 @@ const SettingsModal = () => {
                                     <span className="settings-modal__button-text">
                                         {item.label}
                                     </span>
+                                </button>
+                            </li>
+                        );
+                    })}
+                </ul>
+
+                <h2 className="settings-modal__title">Choose balls qty</h2>
+                <ul className="settings-modal-btns__list">
+                    {ballsQtyList.map((value, index) => {
+                        const currentClass =
+                            value === qtyBalls
+                                ? 'selected__button'
+                                : 'settings-modal__button';
+
+                        return (
+                            <li
+                                key={`${value - index}`}
+                                className="settings-modal__item"
+                            >
+                                <button
+                                    onClick={() => handleButtonClick(value)}
+                                    className={`settings-modal__button ${currentClass}`}
+                                >
+                                    {value}
                                 </button>
                             </li>
                         );

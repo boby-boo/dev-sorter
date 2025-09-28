@@ -4,6 +4,7 @@ import { GAME_CONFIG } from '../constants/gameConfig';
 import { distance, createGroupId } from '../utils/gameUtils';
 import { selectBalls } from '../features/selectors';
 import { useSelector } from 'react-redux';
+import { selectBallsQty } from '../features/selectors';
 
 const BALL_COLORS: Record<string, Color> = {
   js: '#F7DF1E',
@@ -16,6 +17,7 @@ const BALL_COLORS: Record<string, Color> = {
 
 export const useGameLogic = (canvasWidth: number, canvasHeight: number) => {
   const ballsRef = useRef<Ball[]>([]);
+  const ballsQty = useSelector(selectBallsQty)
   const selectedBalls = useSelector(selectBalls);
   const mouseRef = useRef<MousePosition>({ x: canvasWidth / 2, y: canvasHeight / 2 });
   const createGroupIdRef = useRef(createGroupId());
@@ -24,7 +26,7 @@ export const useGameLogic = (canvasWidth: number, canvasHeight: number) => {
     const newBalls: Ball[] = [];
 
     selectedBalls.forEach((id) => {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < ballsQty; i++) {
         newBalls.push({
           id: `${id}-${i}`,
           x: canvasWidth / 2 + Math.random() * 100,
@@ -37,7 +39,7 @@ export const useGameLogic = (canvasWidth: number, canvasHeight: number) => {
     });
 
     ballsRef.current = newBalls;
-  }, [canvasWidth, canvasHeight, selectedBalls]);
+  }, [canvasWidth, canvasHeight, selectedBalls, ballsQty]);
 
   const checkBallCollisions = useCallback((balls: Ball[]) => {
     for (let i = 0; i < balls.length; i++) {
