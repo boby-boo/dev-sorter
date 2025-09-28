@@ -19,6 +19,7 @@ body {
     height: 40px;
     cursor: pointer;
     transition: fill 0.3s ease;
+
     &:hover {
         fill: $primary;
     }

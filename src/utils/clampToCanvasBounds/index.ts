@@ -1,9 +1,9 @@
 import type { Ball } from '../../types';
 
 type clampToCanvasBoundsProps = {
-    ball: Ball;
-    canvasWidth: number;
-    canvasHeight: number;
+  ball: Ball;
+  canvasWidth: number;
+  canvasHeight: number;
 }
 
 export const clampToCanvasBounds = ({ ball, canvasWidth, canvasHeight }: clampToCanvasBoundsProps): void => {

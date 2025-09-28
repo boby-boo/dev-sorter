@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setIsGameOver } from "../game/gameConfigSlice"; 
+import { setIsGameOver } from "../game/gameConfigSlice";
 
 type TimerState = {
     currentGameCounter: number;
@@ -8,7 +8,7 @@ type TimerState = {
 }
 
 const initialState: TimerState = {
-    currentGameCounter: 0,    
+    currentGameCounter: 0,
     currentGameTime: 0,
     allGameTime: JSON.parse(localStorage.getItem('allGameTime') || '[]'),
 }

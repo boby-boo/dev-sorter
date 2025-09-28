@@ -11,7 +11,7 @@ export const drawBall = (ctx: CanvasRenderingContext2D, ball: Ball): void => {
   ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
   ctx.fillStyle = ball.color;
   ctx.fill();
-  
+
   if (ball.id !== "hero") {
     ctx.fillStyle = "#2A2A2A";
     ctx.font = `${ball.radius * 0.8}px Roboto`;
@@ -40,7 +40,7 @@ export const updateGroups = (balls: Ball[]): Record<string, Ball[]> => {
   });
 
   Object.values(groups).forEach(group => {
-    const leader = group[0]; 
+    const leader = group[0];
     group.forEach((ball, idx) => {
       if (idx === 0) return;
       if (ball !== leader) {

@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     &__content {
         padding: 20px;
         display: flex;
@@ -20,20 +21,25 @@
         border-radius: 10px;
         backdrop-filter: blur(10px);
     }
+
     &__title {
         font-size: 25px;
         font-weight: 600;
+
         span {
             color: $primary;
         }
     }
+
     &__list {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
+
     &__item {
         font-size: 20px;
+
         span {
             font-weight: 600;
         }

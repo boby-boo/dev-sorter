@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type GameState = {
-   isGameOver: boolean;
-   isSettingsOpen: boolean;
-   balls: string[];
+    isGameOver: boolean;
+    isSettingsOpen: boolean;
+    balls: string[];
 }
 
 const initialState: GameState = {

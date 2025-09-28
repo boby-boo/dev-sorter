@@ -1,7 +1,7 @@
-import {configureStore} from "@reduxjs/toolkit";
-import gameConfigReducer from "../features/game/gameConfigSlice";
-import timerConfigReducer from "../features/timer/timerConfigSlice";
-import playerReducer from "../features/player/playerSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import gameConfigReducer from '../features/game/gameConfigSlice';
+import timerConfigReducer from '../features/timer/timerConfigSlice';
+import playerReducer from '../features/player/playerSlice';
 
 export const store = configureStore({
     reducer: {
